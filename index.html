@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恋爱值性格测试</title>
+  <link rel="icon" href="https://pic.imgdb.cn/item/661bb5a89f345e8d0347e4ce.jpg" />
+  <style>
+    body {
+      background-image: url('https://pic.imgdb.cn/item/661bb5a89f345e8d0347e4ce.jpg');
+      background-size: cover;
+      background-position: center;
+      font-family: "Arial", sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff6699;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background-color: #ff3366;
+    }
+    #analysis {
+      margin-top: 30px;
+      font-size: 20px;
+    }
+    #summary {
+      margin-top: 40px;
+      font-size: 24px;
+      color: #ffff99;
+    }
+  </style>
+</head>
+<body>
+  <h1>恋爱值性格测试</h1>
+  <p>当前得分：<span id="score">0</span></p>
+  <button onclick="addScore()">点击增加恋爱值！</button>
+  <p id="analysis"></p>
+  <p id="summary"></p>
+
+  <script>
+    let score = 0;
+    const messages = [
+      "你是个深情却不善表达的人，一旦爱上就不轻易放手。",
+      "你外表洒脱，其实对爱情非常认真。",
+      "你在爱情里慢热，但一旦沦陷，就是满眼都是对方。",
+      "你理性又冷静，但在喜欢的人面前会变得特别温柔。",
+      "你是那种不善言辞，但行动胜过千言万语的人。"
+    ];
+
+    function addScore() {
+      score += 1;
+      document.getElementById("score").innerText = score;
+      const msg = messages[Math.floor(Math.random() * messages.length)];
+      document.getElementById("analysis").innerText = msg;
+
+      if (score >= 10) {
+        document.getElementById("summary").innerText = "你是一个值得被深深爱的人。";
+      }
+    }
+  </script>
+</body>
+</html>
